@@ -1,0 +1,20 @@
+.view-all-section {
+  max-width: 32rem;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+
+.view-all-link {
+  display: block;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.view-all-link:hover {
+  background-color: #3a3838; 
+}

@@ -1,0 +1,78 @@
+body{
+    background-color: #d9ccb4;
+}
+.job-listing {
+    background-color: #f7ebdd;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .job-listing-content {
+    padding: 1rem;
+  }
+  
+  .job-type {
+    color: #1b1b1b;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .job-title {
+    color: #0c0c0c;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .job-description {
+    margin-bottom: 1.25rem;
+  }
+  
+  .toggle-description {
+    color: #572a0a;
+    margin-bottom: 1.25rem;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .toggle-description:hover {
+    color: #a16118;
+  }
+  
+  .job-salary {
+    color: #572a0a;
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .divider {
+    border-top: 1px solid #e5e7eb;
+    margin-bottom: 1.25rem;
+  }
+  
+  .job-location {
+    color: #572a0a;
+    margin-bottom: 1.25rem;
+  }
+  
+  .location-icon {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .read-more-btn {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+  
+  .read-more-btn:hover {
+    background-color: #3a3838;
+  }
+  

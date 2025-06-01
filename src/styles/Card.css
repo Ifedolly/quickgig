@@ -1,0 +1,6 @@
+.card {
+    padding: 1.5rem;          /* same as p-6 */
+    border-radius: 0.5rem;    /* same as rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* same as shadow-md */
+    background-color: #f3f4f6; /* same as Tailwind's bg-gray-100 */
+  }
