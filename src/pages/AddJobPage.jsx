@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import '../styles/AddJobPage.css';
+import '../styles/AddJobPage.css'
 
 const AddJobPage = ({addJobSubmit}) => {
     const [title, setTitle] = useState('')

@@ -45,10 +45,13 @@
   padding: 0.5rem 0.75rem;
   border: 1px solid #d1d5db;
   outline: none;
+  background-color: #e9dbc1;
+  border-color: #e9dbc1;
+
 }
 
 .submit-btn {
-  background-color: #6366f1;
+  background-color: black;
   color: white;
   font-weight: bold;
   padding: 0.5rem 1rem;
