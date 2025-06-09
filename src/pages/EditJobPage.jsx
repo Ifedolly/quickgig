@@ -1,43 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import '../styles/EditJobPage.css';
 
 const EditJobPage = ({ updateJobSubmit }) => {
   const job = useLoaderData();
-
-  const [title, setTitle] = useState(job.title);
-  const [type, setType] = useState(job.type);
-  const [location, setLocation] = useState(job.location);
-  const [description, setDescription] = useState(job.description);
-  const [salary, setSalary] = useState(job.salary);
-  const [companyName, setCompanyName] = useState(job.company.name);
-  const [companyDescription, setCompanyDescription] = useState(job.company.description);
-  const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
-  const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
-
   const navigate = useNavigate();
   const { id } = useParams();
 
+  // Initialize states with job data
+  const [title, setTitle] = useState(job.title || '');
+  const [type, setType] = useState(job.type || 'One-Time');
+  const [location, setLocation] = useState(job.location || '');
+  const [description, setDescription] = useState(job.description || '');
+  const [pay, setPay] = useState(job.pay || '');
+
+  const [posterName, setPosterName] = useState(job.poster?.name || '');
+  const [posterDescription, setPosterDescription] = useState(job.poster?.description || '');
+  const [posterEmail, setPosterEmail] = useState(job.poster?.contactEmail || '');
+  const [posterPhone, setPosterPhone] = useState(job.poster?.contactPhone || '');
+
+  useEffect(() => {
+    // Reset form values if job changes
+    setTitle(job.title || '');
+    setType(job.type || 'One-Time');
+    setLocation(job.location || '');
+    setDescription(job.description || '');
+    setPay(job.pay || '');
+
+    setPosterName(job.poster?.name || '');
+    setPosterDescription(job.poster?.description || '');
+    setPosterEmail(job.poster?.contactEmail || '');
+    setPosterPhone(job.poster?.contactPhone || '');
+  }, [job]);
+
   const submitForm = (e) => {
     e.preventDefault();
+
     const updatedJob = {
       id,
       title,
       type,
       location,
       description,
-      salary,
-      company: {
-        name: companyName,
-        description: companyDescription,
-        contactEmail,
-        contactPhone,
+      pay,
+      poster: {
+        name: posterName,
+        description: posterDescription,
+        contactEmail: posterEmail,
+        contactPhone: posterPhone,
       },
     };
+
     updateJobSubmit(updatedJob);
     toast.success('Job Updated Successfully');
-    return navigate(`/jobs/${id}`);
+    navigate(`/jobs/${id}`);
   };
 
   return (
@@ -49,11 +66,16 @@ const EditJobPage = ({ updateJobSubmit }) => {
 
             <div className="form-group">
               <label htmlFor="type">Job Type</label>
-              <select id="type" name="type" required value={type} onChange={(e) => setType(e.target.value)}>
-                <option value="Full-Time">Full-Time</option>
-                <option value="Part-Time">Part-Time</option>
-                <option value="Remote">Remote</option>
-                <option value="Internship">Internship</option>
+              <select
+                id="type"
+                name="type"
+                required
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+              >
+                <option value="One-Time">One-Time</option>
+                <option value="Hourly">Hourly</option>
+                <option value="Daily">Daily</option>
               </select>
             </div>
 
@@ -63,7 +85,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
                 type="text"
                 id="title"
                 name="title"
-                placeholder="eg. Beautiful Apartment In Miami"
+                placeholder="eg. Experienced Plumber Needed"
                 required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -83,20 +105,15 @@ const EditJobPage = ({ updateJobSubmit }) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="salary">Salary</label>
-              <select id="salary" name="salary" required value={salary} onChange={(e) => setSalary(e.target.value)}>
-                <option value="Under $50K">Under $50K</option>
-                <option value="$50K - 60K">$50K - $60K</option>
-                <option value="$60K - 70K">$60K - $70K</option>
-                <option value="$70K - 80K">$70K - $80K</option>
-                <option value="$80K - 90K">$80K - $90K</option>
-                <option value="$90K - 100K">$90K - $100K</option>
-                <option value="$100K - 125K">$100K - $125K</option>
-                <option value="$125K - 150K">$125K - $150K</option>
-                <option value="$150K - 175K">$150K - $175K</option>
-                <option value="$175K - 200K">$175K - $200K</option>
-                <option value="Over $200K">Over $200K</option>
-              </select>
+              <label htmlFor="pay">Payment Amount</label>
+              <input
+                type="text"
+                id="pay"
+                name="pay"
+                placeholder="Enter your budget or payment amount"
+                value={pay}
+                onChange={(e) => setPay(e.target.value)}
+              />
             </div>
 
             <div className="form-group">
@@ -105,66 +122,67 @@ const EditJobPage = ({ updateJobSubmit }) => {
                 type="text"
                 id="location"
                 name="location"
-                placeholder="Company Location"
+                placeholder="Job Location"
                 required
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               />
             </div>
 
-            <h3 className="form-subheading">Company Info</h3>
+            <h3 className="form-subheading">Poster Contact Info (Optional)</h3>
 
             <div className="form-group">
-              <label htmlFor="company">Company Name</label>
+              <label htmlFor="poster_name">Name</label>
               <input
                 type="text"
-                id="company"
-                name="company"
-                placeholder="Company Name"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
+                id="poster_name"
+                name="poster_name"
+                placeholder="Poster Name"
+                value={posterName}
+                onChange={(e) => setPosterName(e.target.value)}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="company_description">Company Description</label>
+              <label htmlFor="poster_description">Description</label>
               <textarea
-                id="company_description"
-                name="company_description"
-                rows="4"
-                placeholder="What does your company do?"
-                value={companyDescription}
-                onChange={(e) => setCompanyDescription(e.target.value)}
+                id="poster_description"
+                name="poster_description"
+                rows="3"
+                placeholder="Brief description (optional)"
+                value={posterDescription}
+                onChange={(e) => setPosterDescription(e.target.value)}
               ></textarea>
             </div>
 
             <div className="form-group">
-              <label htmlFor="contact_email">Contact Email</label>
+              <label htmlFor="poster_email">Contact Email</label>
               <input
                 type="email"
-                id="contact_email"
-                name="contact_email"
+                id="poster_email"
+                name="poster_email"
                 placeholder="Email address for applicants"
-                required
-                value={contactEmail}
-                onChange={(e) => setContactEmail(e.target.value)}
+                value={posterEmail}
+                onChange={(e) => setPosterEmail(e.target.value)}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="contact_phone">Contact Phone</label>
+              <label htmlFor="poster_phone">Contact Phone</label>
               <input
                 type="tel"
-                id="contact_phone"
-                name="contact_phone"
-                placeholder="Optional phone for applicants"
-                value={contactPhone}
-                onChange={(e) => setContactPhone(e.target.value)}
+                id="poster_phone"
+                name="poster_phone"
+                placeholder="Optional phone number"
+                value={posterPhone}
+                onChange={(e) => setPosterPhone(e.target.value)}
               />
             </div>
 
             <div>
-              <button type="submit" className="submit-btn">Update Job</button>
+              <button type="submit" className="submit-btn">
+                Update Job
+              </button>
             </div>
           </form>
         </div>

@@ -2,86 +2,86 @@
   "jobs": [
     {
       "id": "1",
-      "title": "Senior React Developer",
-      "type": "Full-Time",
-      "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
-      "location": "Boston, MA",
-      "salary": "$70K - $80K",
-      "company": {
-        "name": "NewTek Solutions",
-        "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
-        "contactEmail": "contact@teksolutions.com",
-        "contactPhone": "555-555-5555"
+      "title": "DJ Needed for Birthday Party",
+      "type": "One-Time",
+      "location": "Lekki, Lagos",
+      "description": "Looking for a fun and energetic DJ for a birthday party this weekend. Must bring own equipment.",
+      "pay": "₦90,000",
+      "poster": {
+        "name": "Chidi Okeke",
+        "description": "Hosting a birthday party and need quick entertainment help.",
+        "contactEmail": "chidi.okeke@gmail.com",
+        "contactPhone": "0802-123-4567"
       }
     },
     {
       "id": "2",
-      "title": "Front-End Engineer (React & Redux)",
-      "type": "Full-Time",
-      "location": "Miami, FL",
-      "description": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
-      "salary": "$70K - $80K",
-      "company": {
-        "name": "Veneer Solutions",
-        "description": "Veneer Solutions is a creative agency specializing in digital design and development. Our team is dedicated to pushing the boundaries of creativity and innovation to deliver exceptional results for our clients.",
-        "contactEmail": "contact@loremipsum.com",
-        "contactPhone": "555-555-5555"
+      "title": "Caterer Needed for Office Lunch",
+      "type": "One-Time",
+      "location": "Ikeja, Lagos",
+      "description": "We need a caterer to prepare lunch for 25 staff members on Friday. Prefer Nigerian dishes.",
+      "pay": "₦90,000",
+      "poster": {
+        "name": "Arla White",
+        "description": "Homeowner needing urgent plumbing assistance.",
+        "contactEmail": "amina.bello@yahoo.com",
+        "contactPhone": "0903-987-6543"
       }
     },
     {
       "id": "3",
-      "title": "React.js Dev",
-      "type": "Full-Time",
-      "location": "Brooklyn, NY",
-      "description": "Are you passionate about front-end development? Join our team in vibrant Brooklyn, NY, and work on exciting projects that make a difference. We offer competitive compensation and a collaborative work environment where your ideas are valued.",
-      "salary": "$70K - $80K",
-      "company": {
-        "name": "Dolor Cloud",
-        "description": "Dolor Cloud is a leading technology company specializing in digital solutions for businesses of all sizes. With a focus on innovation and customer satisfaction, we are committed to delivering cutting-edge products and services.",
-        "contactEmail": "contact@dolorsitamet.com",
-        "contactPhone": "555-555-5555"
+      "title": "Urgent Plumbing Fix Needed",
+      "type": "One-Time",
+      "description": "The kitchen sink is leaking badly. Need a  professional plumber for immediate assistance.",
+      "location": "Gwarinpa, Abuja",
+      "pay": "₦15,000",
+      "poster": {
+        "name": "Amina Bello",
+        "description": "Homeowner needing urgent plumbing assistance.",
+        "contactEmail": "amina.bello@yahoo.com",
+        "contactPhone": "0903-987-6543"
       }
     },
     {
       "id": "4",
-      "title": "React Front-End Developer",
-      "type": "Part-Time",
-      "description": "Join our team as a Part-Time Front-End Developer in beautiful Phoenix, AZ. We are looking for a self-motivated individual with a passion for creating engaging user experiences. This position offers flexible hours and the opportunity to work remotely.",
-      "location": "Phoenix, AZ",
-      "salary": "$60K - $70K",
-      "company": {
-        "name": "Alpha Elite",
-        "description": "Alpha Elite is a dynamic startup specializing in digital marketing and web development. We are committed to fostering a diverse and inclusive workplace where creativity and innovation thrive.",
-        "contactEmail": "contact@adipisicingelit.com",
-        "contactPhone": "555-555-5555"
+      "title": "Makeup Artist Needed for Wedding",
+      "type": "One-Time",
+      "description": "Need a makeup artist for the bride and 2 bridesmaids this Saturday morning.",
+      "location": "Maitama, Abuja",
+      "pay": "₦60,000",
+      "poster": {
+        "name": "Ngozi Umeh",
+        "description": "Bride seeking last-minute beauty assistance.",
+        "contactEmail": "ngoziumeh@gmail.com",
+        "contactPhone": "0810-234-5678"
       }
     },
     {
       "id": "5",
-      "title": "Full Stack React Developer",
-      "type": "Full-Time",
-      "description": "Exciting opportunity for a Full-Time Front-End Developer in bustling Atlanta, GA. We are seeking a talented individual with a passion for building elegant and scalable web applications. Join our team and make an impact!",
-      "location": "Atlanta, GA",
-      "salary": "$90K - $100K",
-      "company": {
-        "name": "Browning Technologies",
-        "description": "Browning Technologies is a rapidly growing technology company specializing in e-commerce solutions. We offer a dynamic and collaborative work environment where employees are encouraged to think creatively and innovate.",
-        "contactEmail": "contact@consecteturadipisicing.com",
-        "contactPhone": "555-555-5555"
+      "title": "Gardener Needed to Tidy Up Backyard",
+      "type": "One-Time",
+      "description": "Need help cutting grass and trimming plants. Should bring own tools.",
+      "location": "Ikeja, Lagos",
+      "pay": "₦10,000",
+      "poster": {
+        "name": "Tolu Adebayo",
+        "description": "Household needing light gardening work done quickly.",
+        "contactEmail": "toluadebayo@gmail.com",
+        "contactPhone": "0701-123-4567"
       }
     },
     {
       "id": "6",
-      "title": "React Native Dev",
-      "type": "Full-Time",
-      "location": "Portland, OR",
-      "description": "Join our team as a Front-End Developer in beautiful Portland, OR. We are looking for a skilled and enthusiastic individual to help us create innovative web solutions. Competitive salary and great benefits package available.",
-      "salary": "$100K - $110K",
-      "company": {
-        "name": "Port Solutions INC",
-        "description": "Port Solutions is a leading technology company specializing in software development and digital marketing. We are committed to providing our clients with cutting-edge solutions and our employees with a supportive and rewarding work environment.",
-        "contactEmail": "contact@ipsumlorem.com",
-        "contactPhone": "555-555-5555"
+      "title": "Lash Technician Needed for At-Home Appointment",
+      "type": "One-Time",
+      "description": "Need lash extensions done at home before Friday. Must be experienced.",
+      "location": "Yaba, Lagos",
+      "pay": "₦25,000",
+      "poster": {
+        "name": "Blessing Nnaji",
+        "description": "Client booking last-minute home beauty service.",
+        "contactEmail": "blessingnnaji@gmail.com",
+        "contactPhone": "0809-222-3333"
       }
     }
   ]

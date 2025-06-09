@@ -45,21 +45,21 @@ const JobPage = ({ deleteJob }) => {
                 <h3 className="section-title">Job Description</h3>
                 <p className="job-description">{job.description}</p>
 
-                <h3 className="section-title">Salary</h3>
-                <p className="job-salary">{job.salary} / Year</p>
+                <h3 className="section-title">Pay</h3>
+                <p className="job-pay">{job.pay}</p>
               </div>
             </main>
 
             <aside className="job-sidebar">
               <div className="sidebar-card">
-                <h3 className="section-title">Company Info</h3>
-                <h2 className="company-name">{job.company.name}</h2>
-                <p className="company-description">{job.company.description}</p>
+                <h3 className="section-title">Poster Info</h3>
+                <h2 className="company-name">{job.poster.name}</h2>
+                <p className="company-description">{job.poster.description}</p>
                 <hr className="divider" />
                 <h3 className="section-title">Contact Email:</h3>
-                <p className="contact-box">{job.company.contactEmail}</p>
+                <p className="contact-box">{job.poster.contactEmail}</p>
                 <h3 className="section-title">Contact Phone:</h3>
-                <p className="contact-box">{job.company.contactPhone}</p>
+                <p className="contact-box">{job.poster.contactPhone}</p>
               </div>
 
               <div className="sidebar-card">

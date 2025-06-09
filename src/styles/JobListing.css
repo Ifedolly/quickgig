@@ -41,10 +41,10 @@ body{
     color: #a16118;
   }
   
-  .job-salary {
+  .job-pay {
     color: #572a0a;
-    font-size: 1.125rem;
-    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    /* margin-bottom: 1rem; */
   }
   
   .divider {
@@ -63,6 +63,10 @@ body{
     font-size: 1.25rem;
   }
   
+  .job-poster{
+    margin-bottom: 1.25rem;
+  }
+
   .read-more-btn {
     background-color: black;
     color: white;

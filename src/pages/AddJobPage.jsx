@@ -1,54 +1,59 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import '../styles/AddJobPage.css'
 
-const AddJobPage = ({addJobSubmit}) => {
-    const [title, setTitle] = useState('')
-    const [type, setType] = useState('Full-Time')
-    const [location, setLocation] = useState('')
-    const [description, setDescription] = useState('')
-    const [salary, setSalary] = useState('Under $50K')
-    const [companyName, setCompanyName] = useState('')
-    const [companyDescription, setCompanyDescription] = useState('')
-    const [contactEmail, setContactEmail] = useState('')
-    const [contactPhone, setContactPhone] = useState('')
+const AddJobPage = ({ addJobSubmit }) => {
+  const [title, setTitle] = useState('')
+  const [type, setType] = useState('One-Time')
+  const [location, setLocation] = useState('')
+  const [description, setDescription] = useState('')
+  const [pay, setPay] = useState('')
 
-    const navigate = useNavigate()
+  // Poster / Contact info (optional)
+  const [posterName, setPosterName] = useState('')
+  const [posterDescription, setPosterDescription] = useState('')
+  const [contactEmail, setContactEmail] = useState('')
+  const [contactPhone, setContactPhone] = useState('')
 
-    const submitForm = (e) => {
-        e.preventDefault();
+  const navigate = useNavigate()
 
-        const newJob = {
-            title,
-            type,
-            location,
-            description,
-            salary,
-            company: {
-                name: companyName,
-                description: companyDescription,
-                contactEmail,
-                contactPhone
-            }    
-        }
-        addJobSubmit(newJob)
+  const submitForm = (e) => {
+    e.preventDefault()
 
-        toast.success('Job Added Successfully')
-
-        return navigate('/jobs')
+    const newJob = {
+      title,
+      type,
+      location,
+      description,
+      pay,
+      poster:
+        posterName || contactEmail || contactPhone
+          ? {
+              name: posterName,
+              description: posterDescription,
+              contactEmail,
+              contactPhone,
+            }
+          : null,
     }
 
-    return (
-        <section className="addjob-section">
+    addJobSubmit(newJob)
+    toast.success('Job Added Successfully')
+    navigate('/jobs')
+  }
+
+  return (
+    <section className="addjob-section">
       <div className="addjob-container">
         <div className="addjob-form-wrapper">
           <form onSubmit={submitForm} className="addjob-form">
             <h2>Add Job</h2>
 
             <div className="form-group">
-              <label htmlFor="type" className="form-label">Job Type</label>
+              <label htmlFor="type" className="form-label">
+                Job Type
+              </label>
               <select
                 id="type"
                 name="type"
@@ -57,10 +62,9 @@ const AddJobPage = ({addJobSubmit}) => {
                 value={type}
                 onChange={(e) => setType(e.target.value)}
               >
-                <option value="Full-Time">Full-Time</option>
-                <option value="Part-Time">Part-Time</option>
-                <option value="Remote">Remote</option>
-                <option value="Internship">Internship</option>
+                <option value="One-Time">One-Time</option>
+                <option value="Hourly">Hourly</option>
+                <option value="Daily">Daily</option>
               </select>
             </div>
 
@@ -71,7 +75,7 @@ const AddJobPage = ({addJobSubmit}) => {
                 id="title"
                 name="title"
                 className="form-input"
-                placeholder="eg. Beautiful Apartment In Miami"
+                placeholder="eg. Experienced Plumber Needed"
                 required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -79,7 +83,9 @@ const AddJobPage = ({addJobSubmit}) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="description" className="form-label">Description</label>
+              <label htmlFor="description" className="form-label">
+                Description
+              </label>
               <textarea
                 id="description"
                 name="description"
@@ -92,27 +98,18 @@ const AddJobPage = ({addJobSubmit}) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="salary" className="form-label">Salary</label>
-              <select
-                id="salary"
-                name="salary"
-                className="form-select"
-                required
-                value={salary}
-                onChange={(e) => setSalary(e.target.value)}
-              >
-                <option value="Under $50K">Under $50K</option>
-                <option value="$50K - 60K">$50K - $60K</option>
-                <option value="$60K - 70K">$60K - $70K</option>
-                <option value="$70K - 80K">$70K - $80K</option>
-                <option value="$80K - 90K">$80K - $90K</option>
-                <option value="$90K - 100K">$90K - $100K</option>
-                <option value="$100K - 125K">$100K - $125K</option>
-                <option value="$125K - 150K">$125K - $150K</option>
-                <option value="$150K - 175K">$150K - $175K</option>
-                <option value="$175K - 200K">$175K - $200K</option>
-                <option value="Over $200K">Over $200K</option>
-              </select>
+              <label htmlFor="pay" className="form-label">
+                Pay
+              </label>
+              <input
+                type="text"
+                id="pay"
+                name="pay"
+                className="form-input"
+                placeholder="Enter your pay or budget amount"
+                value={pay}
+                onChange={(e) => setPay(e.target.value)}
+              />
             </div>
 
             <div className="form-group">
@@ -122,61 +119,68 @@ const AddJobPage = ({addJobSubmit}) => {
                 id="location"
                 name="location"
                 className="form-input"
-                placeholder="Company Location"
+                placeholder="Job Location"
                 required
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               />
             </div>
 
-            <h3>Company Info</h3>
+            <h3>Poster / Contact Info (Optional)</h3>
 
             <div className="form-group">
-              <label htmlFor="company" className="form-label">Company Name</label>
+              <label htmlFor="posterName" className="form-label">
+                Poster Name
+              </label>
               <input
                 type="text"
-                id="company"
-                name="company"
+                id="posterName"
+                name="posterName"
                 className="form-input"
-                placeholder="Company Name"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
+                placeholder="Person or Company Name"
+                value={posterName}
+                onChange={(e) => setPosterName(e.target.value)}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="company_description" className="form-label">Company Description</label>
+              <label htmlFor="posterDescription" className="form-label">
+                Poster Description
+              </label>
               <textarea
-                id="company_description"
-                name="company_description"
+                id="posterDescription"
+                name="posterDescription"
                 className="form-textarea"
-                rows="4"
-                placeholder="What does your company do?"
-                value={companyDescription}
-                onChange={(e) => setCompanyDescription(e.target.value)}
+                rows="3"
+                placeholder="Brief description (optional)"
+                value={posterDescription}
+                onChange={(e) => setPosterDescription(e.target.value)}
               ></textarea>
             </div>
 
             <div className="form-group">
-              <label htmlFor="contact_email" className="form-label">Contact Email</label>
+              <label htmlFor="contactEmail" className="form-label">
+                Contact Email
+              </label>
               <input
                 type="email"
-                id="contact_email"
-                name="contact_email"
+                id="contactEmail"
+                name="contactEmail"
                 className="form-input"
                 placeholder="Email address for applicants"
-                required
                 value={contactEmail}
                 onChange={(e) => setContactEmail(e.target.value)}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="contact_phone" className="form-label">Contact Phone</label>
+              <label htmlFor="contactPhone" className="form-label">
+                Contact Phone
+              </label>
               <input
                 type="tel"
-                id="contact_phone"
-                name="contact_phone"
+                id="contactPhone"
+                name="contactPhone"
                 className="form-input"
                 placeholder="Optional phone for applicants"
                 value={contactPhone}
@@ -185,13 +189,15 @@ const AddJobPage = ({addJobSubmit}) => {
             </div>
 
             <div>
-              <button className="submit-btn" type="submit">Add Job</button>
+              <button className="submit-btn" type="submit">
+                Add Job
+              </button>
             </div>
           </form>
         </div>
       </div>
     </section>
-    )
+  )
 }
 
 export default AddJobPage

@@ -24,7 +24,7 @@ const JobListing = ({ job }) => {
           {showFullDescription ? 'Less' : 'More'}
         </button>
 
-        <h3 className="job-salary">{job.salary} / Year</h3>
+        <h3 className="job-pay">{job.pay}</h3>
 
         <div className="divider"></div>
 
@@ -33,12 +33,15 @@ const JobListing = ({ job }) => {
           {job.location}
         </div>
 
+        <div className="job-poster">
+          <strong>Posted by:</strong> {job.poster.name}
+        </div>
+
         <Link to={`/jobs/${job.id}`} className="read-more-btn">
           Read More
         </Link>
       </div>
     </div>
-
   );
 };
 
