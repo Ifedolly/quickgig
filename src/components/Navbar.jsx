@@ -1,58 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import '../styles/Navbar.css';
+import React, { useEffect, useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import '../styles/Navbar.css'
 
 const Navbar = () => {
-  const [scrollingDown, setScrollingDown] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [hovered, setHovered] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY)
 
-  const linkClass = ({ isActive }) =>
-    isActive ? 'nav-link-active' : 'nav-link';
+  const handleScroll = () => {
+    const currentY = window.scrollY
+    if (currentY > lastScrollY) {
+      setShowNavbar(false)
+    } else {
+      setShowNavbar(true)
+    }
+    setLastScrollY(currentY)
+  }
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setScrollingDown(true); // When Scrolling Down
-      } else {
-        setScrollingDown(false); // When Scrolling Up
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
-
-  const navbarClasses = `navbar ${scrollingDown ? 'navbar-hidden' : 'navbar-visible'}`;
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   return (
-    <nav
-      className={navbarClasses}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div className="navbar-container">
-        <div className="navbar-content">
-          {/* Logo */}
-          <NavLink className="logo" to="/">
-            <span className="logo-text">QG</span>
-          </NavLink>
-          <div className="nav-links">
-            <NavLink to="/jobs" className={linkClass}>
-              GIGS
-            </NavLink>
-            <NavLink to="/add-job" className={linkClass}>
-              ADD GIG
-            </NavLink>
-          </div>
-        </div>
+    <nav className={`navbar ${showNavbar ? 'show' : 'hide'}`}>
+      <div className="navbar-center">
+        <ul className="navbar-links">
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/jobs">Jobs</NavLink></li>
+          <li><NavLink to="/add-job">Post a Job</NavLink></li>
+        </ul>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

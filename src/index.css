@@ -4,12 +4,13 @@
 /* @import "tailwindcss" */
 
 @font-face {
-    font-family: 'Gotu';
-    src: url('./assets/fonts/Gotu-Regular.ttf') format('truetype');
+    font-family: 'Domine';
+    src: url('./assets/fonts/apercu_regular_pro.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 *{
-    font-family: 'Gotu', 'sans-serif';
+    font-family: 'Domine', 'sans-serif';
+    /* letter-spacing: 1px; */
 }

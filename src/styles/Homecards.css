@@ -1,12 +1,13 @@
 .homecards-section {
     padding: 1rem 0;
     background-color: #f2e2ce;
+    background-color: white;
     color: black;
 }
   
 .card-container {
     max-width: 1120px;
-    height: 35vh;
+    height: 30vh;
     margin: 0 auto;
     padding: 0 1rem;
 }
