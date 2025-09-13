@@ -8,10 +8,10 @@
 }
 
 .editjob-card {
-  background-color: #f7ebdd;
+  background-color: #fffefd;
   padding: 2rem 1.5rem;
   margin-bottom: 1rem;
-  border: 1px solid #f7ebdd;
+  /* border: 1px solid #f7ebdd; */
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -43,10 +43,10 @@
 .form-group textarea {
   width: 100%;
   padding: 0.5rem 0.75rem;
-  border: 1px solid #d1d5db;
+  /* border: 1px solid #d1d5db; */
   outline: none;
-  background-color: #e9dbc1;
-  border-color: #e9dbc1;
+  background-color: #ffffff;
+  border-color: #f5f3f3;
 
 }
 
@@ -62,5 +62,5 @@
 }
 
 .submit-btn:hover {
-  background-color: #4f46e5;
+  background-color: #474747;
 }

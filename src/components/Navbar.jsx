@@ -25,8 +25,8 @@ const Navbar = () => {
     <nav className={`navbar ${showNavbar ? 'show' : 'hide'}`}>
       <div className="navbar-center">
         <ul className="navbar-links">
-          <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/jobs">Jobs</NavLink></li>
+          <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/add-job">Post a Job</NavLink></li>
         </ul>
       </div>

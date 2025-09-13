@@ -4,10 +4,10 @@ body{
 }
 .job-listing {
     background-color: #f7ebdd;
-    background-color: rgb(243, 240, 240);
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgb(247, 244, 244);
+    box-shadow: 0 8px 8px rgba(148, 146, 146, 0.322);
     position: relative;
-    border-radius: 20px;
+    /* border-radius: 20px; */
   }
   
   .job-listing-content {
@@ -22,14 +22,17 @@ body{
   
   .job-title {
     color: #0c0c0c;
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 1.1rem;
+    /* font-weight: bold; */
     margin-bottom: 1rem;
-    letter-spacing: .8px;
+    /* letter-spacing: .8px; */
+    /* text-transform: uppercase; */
   }
   
   .job-description {
     margin-bottom: 1.25rem;
+    font-size: .9rem;
+    color: #333131;
   }
   
   .toggle-description {
@@ -42,7 +45,7 @@ body{
   }
   
   .toggle-description:hover {
-    color: #a16118;
+    /* color: #a16118; */
   }
   
   .job-pay {
@@ -57,14 +60,15 @@ body{
   }
   
   .job-location {
-    color: #572a0a;
+    color: #72360b;
     margin-bottom: 1.25rem;
   }
   
   .location-icon {
     vertical-align: middle;
     margin-right: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    color: rgb(95, 55, 18);
   }
   
   .job-poster{
@@ -76,8 +80,9 @@ body{
     color: white;
     padding: 0.5rem 1rem;
     text-align: center;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     text-decoration: none;
+    /* border-radius: 18px; */
   }
   
   .read-more-btn:hover {

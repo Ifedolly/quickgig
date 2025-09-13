@@ -10,7 +10,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Gotu';
+    src: url('./assets/fonts/Gotu-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 *{
     font-family: 'Domine', 'sans-serif';
-    /* letter-spacing: 1px; */
 }

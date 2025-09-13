@@ -5,23 +5,23 @@
 }
 
 .addjob-form-wrapper {
-  background-color: #f7ebdd;
+  background-color: #ffffff;
   padding: 2rem 1.5rem;
   margin: 1rem 0;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #f7ebdd;
+  /* border: 1px solid #f7ebdd; */
 }
 
 .addjob-form h2 {
   font-size: 1.875rem;
   text-align: center;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin-bottom: 1.5rem;
 }
 
 .addjob-form h3 {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 1.25rem;
 }
 

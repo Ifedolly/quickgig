@@ -1,8 +1,10 @@
 .hero-section {
+    
     position: relative;
     height: 65vh;
     color: #eeeeee;
-    text-shadow: #06023b6b 0px 0px 5px;
+    color: black;
+    text-shadow: #f8f8fc6b 0px 0px 5px;
     overflow: hidden;
 
     /* Center content */
@@ -18,10 +20,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/images/hero-test1.jpg');
+    background-image: url('/images/texture2.jpg');
     background-size: cover;
     background-position: right;
-    filter: blur(8px);
+    filter: blur(1px);
     transform: scale(1.05);
     z-index: 0;
 }

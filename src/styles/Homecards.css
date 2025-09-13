@@ -1,7 +1,7 @@
 .homecards-section {
     padding: 1rem 0;
-    background-color: #f2e2ce;
-    background-color: white;
+    background-color: rgb(253, 246, 246);
+    background-color: #ffffff;
     color: black;
 }
   
@@ -22,13 +22,14 @@
 
 .card-heading {
     font-size: 1.6rem;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-top: 2rem;
 }
   
 .card-text {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
+    color: rgb(46, 46, 46);
 }
 
 .card-box {
@@ -45,6 +46,7 @@
     background-color: black;
     color: white;
     transition: background-color 0.3s ease;
+    /* border-radius: 30px; */
 }
 
 .btn-developer:hover {
@@ -57,10 +59,11 @@
     background-color: #262e30;
     color: white;
     transition: background-color 0.3s ease;
+    /* border-radius: 30px; */
 }
 
 .btn-employer:hover {
-    background-color: #030333;
+    background-color: #020224;
 }
 
   
