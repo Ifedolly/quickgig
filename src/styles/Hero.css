@@ -50,13 +50,29 @@
     text-transform: uppercase;
 }
 
-.hero-subtitle{
+/* .hero-subtitle{
     font-size: 1.4rem;
+} */
+.hero-subtitle {
+  margin-top: 0.75rem;
+  color: #242323;
+  max-width: 70ch; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* @media (min-width: 640px){
+.hero-subtitle-line { 
+  margin: 0.25rem 0;
+  font-size: 1.18rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 640px){
     .hero-title{
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+    }
+    .hero-subtitle-line{
+        font-size: 1.1rem;
     }
 }
 
@@ -64,4 +80,4 @@
     .hero-title{
         font-size: 3rem;
     }
-} */
+}

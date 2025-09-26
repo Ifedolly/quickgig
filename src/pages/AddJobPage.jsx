@@ -48,9 +48,9 @@ const AddJobPage = ({ addJobSubmit }) => {
       <div className="addjob-container">
         <div className="addjob-form-wrapper">
           <form onSubmit={submitForm} className="addjob-form">
-            <h2>Add Job</h2>
+            <h2 data-aos="zoom-in">Add Job</h2>
 
-            <div className="form-group">
+            <div className="form-group" >
               <label htmlFor="type" className="form-label">
                 Job Type
               </label>

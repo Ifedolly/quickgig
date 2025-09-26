@@ -25,15 +25,15 @@ const JobListings = ({ isHome = false }) => {
   }, [isHome]);
 
   return (
-    <section className="job-listings-section">
+    <section className="job-listings-section" >
       <div className="container">
-        <h2 className="section-heading">
+        <h2 className="section-heading" data-aos="zoom-in">
           {isHome ? 'Recent Gigs' : 'Browse Jobs'}
         </h2>
         {loading ? (
           <Spinner loading={loading} />
         ) : (
-          <div className="job-grid">
+          <div className="job-grid" data-aos="fade-up">
             {jobs.map((job) => (
               <JobListing key={job.id} job={job} />
             ))}

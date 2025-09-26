@@ -4,8 +4,8 @@ import '../styles/ViewAllJobs.css';
 
 const ViewAllJobs = () => {
   return (
-    <section className="view-all-section">
-      <Link to="/jobs" className="view-all-link">
+    <section className="view-all-section" >
+      <Link to="/jobs" className="view-all-link" data-aos="fade-up">
         View All Jobs
       </Link>
     </section>

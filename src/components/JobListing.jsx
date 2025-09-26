@@ -13,7 +13,7 @@ const JobListing = ({ job }) => {
   }
 
   return (
-    <div className="job-listing">
+    <div className="job-listing" data-aos="fade-up">
       <div className="job-listing-content">
         <div className="job-type">{job.type}</div>
         <h3 className="job-title">{job.title}</h3>

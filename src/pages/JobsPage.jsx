@@ -4,7 +4,7 @@ import '../styles/JobsPage.css';
 
 const JobsPage = () => {
   return (
-    <section className="jobs-page-section">
+    <section className="jobs-page-section" >
       <JobListings />
     </section>
   );
